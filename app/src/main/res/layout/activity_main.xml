@@ -7,25 +7,30 @@
     tools:context=".MainActivity"
     tools:layout_editor_absoluteY="81dp">
 
-    <TextView
-        android:id="@+id/TextView1"
-        android:text="안녕하세요 메인엑티비티 입니다."
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="parent"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:textStyle="bold"
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1번액티비티로"/>
 
-    <TextView
-        android:id="@+id/TextView2"
-        android:text="123123123123"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/TextView1"/>
+        <Button
+            android:id="@+id/button2"
+            app:layout_constraintLeft_toRightOf="@id/button1"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2번액티비티로" />
 
-    <Button
-        android:id="@+id/Button1"
-        android:text="서브로이동11z"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/TextView2"
-        android:layout_marginTop="20dp"/>
+    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/framelayout"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </FrameLayout>
 </android.support.constraint.ConstraintLayout>
