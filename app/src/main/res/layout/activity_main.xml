@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    tools:layout_editor_absoluteY="81dp">
+    tools:layout_editor_absoluteY="81dp"
+    android:id="@+id/constraintlayout">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,18 +20,32 @@
 
         <Button
             android:id="@+id/button2"
-            app:layout_constraintLeft_toRightOf="@id/button1"
             android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="2번액티비티로" />
 
+        <Button
+            android:id="@+id/button3"
+            android:textStyle="bold"
+            android:text="맨처음화면으로"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
     </LinearLayout>
     <FrameLayout
+
         android:id="@+id/framelayout"
         android:layout_marginTop="60dp"
         android:layout_marginBottom="20dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <TextView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="맨처음 화면"
+            android:textSize="50sp" />
     </FrameLayout>
 </android.support.constraint.ConstraintLayout>
