@@ -24,8 +24,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
 
-                        FragmentTransaction ft;
-                        ft=getSupportFragmentManager().beginTransaction();
+                        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
                         ft.replace(R.id.framelayout,new FragmentActivity1());
                         ft.commit();
             }
