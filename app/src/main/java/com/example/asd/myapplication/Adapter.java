@@ -1,24 +1,48 @@
 package com.example.asd.myapplication;
 
 import android.content.Context;
-
-import android.database.Cursor;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CursorAdapter;
+import android.widget.BaseAdapter;
 
-public class Adapter extends CursorAdapter {
+import java.util.ArrayList;
 
-    public Adapter(Context context, Cursor c){
-        super(context, c);
+class myItem{
+    int image;
+    String name;
+    String price;
+    myItem(int image, String name, String price){
+        this.image=image;
+        this.name=name;
+        this.price=price;
     }
+}
+public class Adapter extends BaseAdapter{
+
+    private Context context;
+    private int resource;
+    LayoutInflater inflater;
+    ArrayList<myItem> arrayList;
+    int layout;
+
     @Override
-    public View newView(Context context, Cursor cursor, ViewGroup parent) {
+    public int getCount() {
+        return 0;
+    }
+
+    @Override
+    public Object getItem(int position) {
         return null;
     }
 
     @Override
-    public void bindView(View view, Context context, Cursor cursor) {
+    public long getItemId(int position) {
+        return 0;
+    }
 
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        return null;
     }
 }
