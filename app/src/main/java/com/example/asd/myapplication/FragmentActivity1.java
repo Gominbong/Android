@@ -1,5 +1,4 @@
 package com.example.asd.myapplication;
-
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -22,8 +21,6 @@ public class FragmentActivity1 extends Fragment {
         public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
 
             View v = inflater.inflate(R.layout.activity_fragment1,container,false);
-            TextView textView = (TextView)v.findViewById(R.id.text123);
-            textView.setText("asdasd");
             return v;
 
 

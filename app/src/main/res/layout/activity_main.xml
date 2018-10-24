@@ -57,30 +57,4 @@
             android:textSize="50sp" />
     </FrameLayout>
 
-    <LinearLayout
-        app:layout_constraintTop_toBottomOf="@id/framelayout"
-        app:layout_constraintWidth_percent=".9999"
-        app:layout_constraintHeight_percent=".1"
-        android:layout_width="0dp"
-        android:layout_height="0dp">
-
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@android:color/holo_green_light"
-            android:text="주문하기"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@android:color/holo_purple"
-            android:text="장바구니담기"
-            android:textStyle="bold" />
-
-    </LinearLayout>
 </android.support.constraint.ConstraintLayout>
