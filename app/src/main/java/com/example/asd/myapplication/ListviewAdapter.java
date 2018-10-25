@@ -14,6 +14,8 @@ public class ListviewAdapter extends BaseAdapter {
 
     private LayoutInflater inflater;
     private ArrayList<MyItem> data;
+
+
     private int layout;
 
     public ListviewAdapter(Context context, int layout, ArrayList<MyItem> data){
@@ -37,14 +39,18 @@ public class ListviewAdapter extends BaseAdapter {
             convertView=inflater.inflate(layout,parent,false);
         }
 
+
         MyItem listviewitem=data.get(position);
 
-        ImageView icon=(ImageView)convertView.findViewById(R.id.imageview);
-        icon.setImageResource(listviewitem.getImage());
+        ImageView imageView=(ImageView)convertView.findViewById(R.id.imageview);
+        TextView textName=(TextView)convertView.findViewById(R.id.textview1);
+        TextView textPrice=(TextView)convertView.findViewById(R.id.textview2);
+        TextView textText=(TextView)convertView.findViewById(R.id.textview3);
 
-        TextView textName(TextView)convertView.findViewById(R.id.textView1)
-        TextView name=(TextView)convertView.findViewById(R.id.textview);
-        name.setText(listviewitem.getName());
+        imageView.setImageResource(listviewitem.getImage());
+        textName.setText(listviewitem.getName());
+        textPrice.setText(listviewitem.getPrice());
+        textText.setText(listviewitem.getText());
 
         return convertView;
     }
