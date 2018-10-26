@@ -1,25 +1,19 @@
 package com.example.asd.myapplication;
-import android.content.Context;
-import android.content.Intent;
-import android.media.Image;
-import android.support.v4.app.Fragment;
+
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentManager;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.view.FrameMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.Toast;
-
 
 import java.util.ArrayList;
 
 public class FragmentActivity1 extends Fragment {
+
     public FragmentActivity1(){
 
     }
@@ -27,6 +21,7 @@ public class FragmentActivity1 extends Fragment {
     @Nullable
     @Override
         public View onCreateView(LayoutInflater inflater, @Nullable final ViewGroup container, Bundle savedInstanceState) {
+
 
         View v = inflater.inflate(R.layout.activity_fragment1,container,false);
         ListView listview=(ListView)v.findViewById(R.id.listview);
@@ -64,35 +59,24 @@ public class FragmentActivity1 extends Fragment {
         data.add(new MyItem(R.drawable.image30,"아이스초코","2500","원"));
 
 
-
-
-
         ListviewAdapter adapter = new ListviewAdapter(getActivity(),R.layout.activity_itemlist,data);
         listview.setAdapter(adapter);
+
+        ListView listview2=(ListView)v.findViewById(R.id.listview11);
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
 
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Bundle args = new Bundle();
-                args.putString("name",data.get(position).getName());
-
-                Fragment fragment = new FragmentActivity1();
-                FragmentManager fm = getFragmentManager();
-                FragmentTransaction ft = fm.beginTransaction();
-                fragment.setArguments(args);
-
-                ft.replace(R.id.framelayout,new FragmentActivity3());
-                ft.commit();
-/*
 
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
                 ft.replace(R.id.framelayout,new FragmentActivity3());
                 ft.commit();
-*/
 
             }
         });
+
+
         return v;
 
 

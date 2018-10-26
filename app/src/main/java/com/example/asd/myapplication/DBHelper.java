@@ -8,22 +8,27 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String DB_NAME = "MyDB";
     private static final int DB_VERSION = 1;
 
-    public DBHelper(Context context){
-        super(context,DB_NAME,null,DB_VERSION);
+    public DBHelper(Context context) {
+        super(context, DB_NAME, null, DB_VERSION);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String sql = "CREATE TABLE menu (_id INTEGER PRIMARY KEY AUTOINCREMENT," + "name TEXT, price INTEGER); ";
-        db.execSQL(sql);
 
-        db.execSQL("INSERT INTO menu VALUES(NULL,'T-REX버거세트',5000);");
-
+        db.execSQL("CREATE TABLE MENU " +
+                "(_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "IMAGE_RESOURCE_ID INTEGER," +
+                "NAME TEXT, " +
+                "PRICE TEXT);");
 
 
     }
+    public void delect(){
 
+    };
+    public void insert(){
 
+    };
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
