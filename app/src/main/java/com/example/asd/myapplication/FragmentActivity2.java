@@ -1,18 +1,40 @@
 package com.example.asd.myapplication;
 
+import android.os.Parcelable;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import static com.example.asd.myapplication.FragmentActivity3.data1;
 import static com.example.asd.myapplication.FragmentActivity3.temp1;
 
 public class FragmentActivity2 extends Fragment {
+
+    String mParam1;
+    public static FragmentActivity2 newInstance(String param1){
+        FragmentActivity2 fragment = new FragmentActivity2();
+        Bundle bundle = new Bundle();
+        bundle.putString("str",param1);
+        fragment.setArguments(bundle);
+        return fragment;
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if(getArguments() !=  null){
+            mParam1 = getArguments().getString("str");
+        }
+    }
+
 
     public FragmentActivity2(){
     }
@@ -28,7 +50,9 @@ public class FragmentActivity2 extends Fragment {
         listview2.setAdapter(adapter);
 
         textView.setText(""+temp1);
-        return v;
+        Log.v("Test","Param1 : "+mParam1);
+        Toast.makeText(getContext(), mParam1, Toast.LENGTH_LONG).show();
+         return v;
 
     }
 }

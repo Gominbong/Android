@@ -17,11 +17,6 @@ public class MainActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
 
-        Fragment asd = new Fragment();
-        Bundle bundle = new Bundle();
-        bundle.putString("asd","asd");
-        asd.setArguments(bundle);
-
         mIndex += 1;
         Log.d(TAG, "index : " + mIndex);
         super.onCreate(savedInstanceState);
@@ -77,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 number=1;
                 FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                ft.replace(R.id.framelayout,new FragmentActivity2());
+                ft.replace(R.id.framelayout,FragmentActivity2.newInstance("zzzzzzzzzzzzz"));
                 ft.commit();
             }
         });

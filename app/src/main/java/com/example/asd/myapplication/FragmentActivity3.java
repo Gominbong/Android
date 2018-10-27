@@ -57,7 +57,7 @@ public class FragmentActivity3 extends Fragment{
                 number=1;
 
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.framelayout,new FragmentActivity2());
+                ft.replace(R.id.framelayout,FragmentActivity2.newInstance("222222222222"));
                 ft.commit();
             }
         });
