@@ -11,10 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import static com.example.asd.myapplication.MainActivity.data;
 
-
 public class FragmentActivity1 extends Fragment {
-
-    static final String ARG_PARAM1 = "param1";
 
     static String hamburgerName;
     static int hamburgerPrice;
