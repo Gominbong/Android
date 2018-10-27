@@ -21,7 +21,6 @@ public class FragmentActivity3 extends Fragment{
     static int temp,temp1;
 
     static int number=1;
-    int burgerPrice;
     static ArrayList<MyItem> data1 = new ArrayList<MyItem>();
     public FragmentActivity3(){
 
@@ -41,6 +40,7 @@ public class FragmentActivity3 extends Fragment{
         TextView TextName = (TextView)v.findViewById(R.id.textname);
         final TextView TextPrice = (TextView)v.findViewById(R.id.textprice);
         final TextView TextCount = (TextView)v.findViewById(R.id.textcount);
+        Button button3 = (Button)v.findViewById(R.id.button3);
 
         TextName.setText(""+hamburgerName);
         TextPrice.setText(""+hamburgerPrice);
@@ -72,13 +72,13 @@ public class FragmentActivity3 extends Fragment{
                 number = num+1;
                 TextCount.setText(""+number);
                 TextPrice.setText(""+hamburgerPrice*number);
-
             }
         });
 
         imageButtonDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if(number>1) {
                     int num = Integer.parseInt(TextCount.getText().toString());
                     number = num - 1;

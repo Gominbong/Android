@@ -36,9 +36,6 @@ public class FragmentActivity1 extends Fragment {
                 hamburgerPrice = data.get(position).price;
                 hamburgerImage = data.get(position).image;
 
-
-
-
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
                 ft.replace(R.id.framelayout,new FragmentActivity3());
                 ft.commit();
