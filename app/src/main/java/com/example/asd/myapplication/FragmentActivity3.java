@@ -18,15 +18,39 @@ import static com.example.asd.myapplication.FragmentActivity1.hamburgerName;
 import static com.example.asd.myapplication.FragmentActivity1.hamburgerPrice;
 import static com.example.asd.myapplication.FragmentActivity1.hamburgerImage;
 public class FragmentActivity3 extends Fragment{
-    static int temp,temp1;
 
+    String mName,mtext;
+    int mImage,mPrice;
+
+    public static FragmentActivity3 newInstance(int image, String name, int price, String text){
+        FragmentActivity3 fragment = new FragmentActivity3();
+        Bundle bundle = new Bundle();
+        bundle.putInt("image",image);
+        bundle.putString("name",name);
+        bundle.putInt("price",price);
+        bundle.putString("text",text);
+
+        fragment.setArguments(bundle);
+        return fragment;
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if(getArguments() !=  null){
+            mImage = getArguments().getInt("image");
+            mName = getArguments().getString("name");
+            mPrice = getArguments().getInt("price");
+            mtext = getArguments().getString("text");
+        }
+    }
+
+    static int temp,temp1;
     static int number=1;
     static ArrayList<MyItem> data1 = new ArrayList<MyItem>();
+
     public FragmentActivity3(){
 
-    }
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
     }
     @Nullable
     @Override
@@ -49,7 +73,7 @@ public class FragmentActivity3 extends Fragment{
             @Override
             public void onClick(View v) {
 
-                data1.add(new MyItem(hamburgerImage, hamburgerName,hamburgerPrice,"원"+"  x"+number));
+                data1.add(new MyItem(mImage, mName,mPrice,mtext+"  x"+number));
 
                 temp=hamburgerPrice*number;
                 temp1=temp1+temp;
@@ -57,7 +81,7 @@ public class FragmentActivity3 extends Fragment{
                 number=1;
 
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.framelayout,FragmentActivity2.newInstance("222222222222"));
+                ft.replace(R.id.framelayout,FragmentActivity2.newInstance("kkkkkkkkkkk"));
                 ft.commit();
             }
         });

@@ -1,7 +1,6 @@
 package com.example.asd.myapplication;
 
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -10,10 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
-
-import java.util.ArrayList;
-
 import static com.example.asd.myapplication.MainActivity.data;
 
 
@@ -21,25 +16,6 @@ public class FragmentActivity1 extends Fragment {
 
     static final String ARG_PARAM1 = "param1";
 
-   /*     ArrayList<MyItem> myItems;
-
-    public static FragmentActivity1 newInstance(ArrayList<MyItem> data5){
-        FragmentActivity1 fragment = new FragmentActivity1();
-        Bundle bundle = new Bundle();
-        bundle.putParcelableArrayList("list", (ArrayList<? extends Parcelable>) data5);
-        fragment.setArguments(bundle);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if(getArguments() !=  null){
-
-            myItems =getArguments().getParcelableArrayList("list");
-        }
-    }
-*/
     static String hamburgerName;
     static int hamburgerPrice;
     static int hamburgerImage;
@@ -64,12 +40,11 @@ public class FragmentActivity1 extends Fragment {
                 hamburgerImage = data.get(position).image;
 
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.framelayout,new FragmentActivity3());
+                ft.replace(R.id.framelayout,FragmentActivity3.newInstance(data.get(position).image, data.get(position).name, data.get(position).price, data.get(position).text));
+
                 ft.commit();
             }
         });
-       /* Toast.makeText(getContext(),"asd", Toast.LENGTH_LONG).show();*/
-
 
         return v;
 
