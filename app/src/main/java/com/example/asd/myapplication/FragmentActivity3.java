@@ -84,13 +84,13 @@ public class FragmentActivity3 extends Fragment{
         imageButtonDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(number>1) {
+                    int num = Integer.parseInt(TextCount.getText().toString());
+                    number = num - 1;
+                    TextCount.setText("" + number);
 
-                int num = Integer.parseInt(TextCount.getText().toString());
-                number = num-1;
-                TextCount.setText(""+number);
-
-                TextPrice.setText(""+hamburgerPrice*number);
-
+                    TextPrice.setText("" + hamburgerPrice * number);
+                }
             }
         });
         return v;
