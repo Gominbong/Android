@@ -1,6 +1,5 @@
 package com.example.asd.myapplication;
 
-import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -17,8 +16,7 @@ import java.util.ArrayList;
 
 import static com.example.asd.myapplication.FragmentActivity1.hamburgerName;
 import static com.example.asd.myapplication.FragmentActivity1.hamburgerPrice;
-import static com.example.asd.myapplication.MainActivity.data;
-
+import static com.example.asd.myapplication.FragmentActivity1.hamburgerImage;
 public class FragmentActivity3 extends Fragment{
     static int temp,temp1;
 
@@ -46,12 +44,12 @@ public class FragmentActivity3 extends Fragment{
 
         TextName.setText(""+hamburgerName);
         TextPrice.setText(""+hamburgerPrice);
-
+        imageView.setImageResource(hamburgerImage);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                data1.add(new MyItem(R.drawable.image00, hamburgerName,hamburgerPrice,"원"+"  x"+number));
+                data1.add(new MyItem(hamburgerImage, hamburgerName,hamburgerPrice,"원"+"  x"+number));
 
                 temp=hamburgerPrice*number;
                 temp1=temp1+temp;
@@ -73,8 +71,6 @@ public class FragmentActivity3 extends Fragment{
                 int num = Integer.parseInt(TextCount.getText().toString());
                 number = num+1;
                 TextCount.setText(""+number);
-
-
                 TextPrice.setText(""+hamburgerPrice*number);
 
             }
@@ -87,7 +83,6 @@ public class FragmentActivity3 extends Fragment{
                     int num = Integer.parseInt(TextCount.getText().toString());
                     number = num - 1;
                     TextCount.setText("" + number);
-
                     TextPrice.setText("" + hamburgerPrice * number);
                 }
             }

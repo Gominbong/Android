@@ -16,6 +16,7 @@ public class FragmentActivity1 extends Fragment {
     static String hamburgerName;
     static int hamburgerPrice;
     static int hamburgerImage;
+
     public FragmentActivity1(){
 
     }
@@ -34,6 +35,8 @@ public class FragmentActivity1 extends Fragment {
                 hamburgerName =  data.get(position).name;
                 hamburgerPrice = data.get(position).price;
                 hamburgerImage = data.get(position).image;
+
+
 
 
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
