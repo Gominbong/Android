@@ -4,10 +4,10 @@ package com.example.asd.myapplication;
 class MyItem {
     int image;
     String name;
-    String price;
+    int price;
     String text;
 
-    MyItem( int image, String name, String price, String text) {
+    MyItem( int image, String name, int price, String text) {
         this.price = price;
         this.name = name;
         this.image = image;
@@ -19,7 +19,7 @@ class MyItem {
         return "MyItem{" +
                 "image=" + image +
                 ", name='" + name + '\'' +
-                ", price='" + price + '\'' +
+                ", price=" + price +
                 ", text='" + text + '\'' +
                 '}';
     }
@@ -40,11 +40,11 @@ class MyItem {
         this.name = name;
     }
 
-    public String getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 

@@ -15,13 +15,9 @@ public class ListviewAdapter extends BaseAdapter {
     private LayoutInflater inflater;
     private ArrayList<MyItem> data;
 
-
-    private int layout;
-
     public ListviewAdapter(Context context, int layout, ArrayList<MyItem> data){
         this.inflater=(LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.data=data;
-        this.layout=layout;
     }
 
     @Override
@@ -36,21 +32,20 @@ public class ListviewAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent){
         if(convertView==null){
-            convertView=inflater.inflate(layout,parent,false);
+
+            convertView=inflater.inflate(R.layout.activity_itemlist,parent,false);
         }
 
-
-        MyItem listviewitem=data.get(position);
 
         ImageView imageView=(ImageView)convertView.findViewById(R.id.imageview);
         TextView textName=(TextView)convertView.findViewById(R.id.textview1);
         TextView textPrice=(TextView)convertView.findViewById(R.id.textview2);
         TextView textText=(TextView)convertView.findViewById(R.id.textview3);
 
-        imageView.setImageResource(listviewitem.getImage());
-        textName.setText(listviewitem.getName());
-        textPrice.setText(listviewitem.getPrice());
-        textText.setText(listviewitem.getText());
+        imageView.setImageResource(data.get(position).getImage());
+        textName.setText(data.get(position).getName());
+        textPrice.setText(""+data.get(position).getPrice());
+        textText.setText(data.get(position).getText());
 
         return convertView;
     }

@@ -18,10 +18,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".sub1Activity" />
-        <activity android:name=".sub2Activity" />
-        <activity android:name=".sub3Activity" />
-        <activity android:name=".Sub33Activity"></activity>
     </application>
 
 </manifest>
