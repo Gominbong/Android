@@ -1,17 +1,12 @@
 package com.example.asd.myapplication;
 
-import android.app.FragmentManager;
-import android.content.Intent;
 import android.content.res.Configuration;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.ListView;
 import static com.example.asd.myapplication.FragmentActivity3.number;
 
 import java.util.ArrayList;
@@ -76,7 +71,6 @@ public class MainActivity extends AppCompatActivity {
                      }
         });
 
-
         button2.setOnClickListener(
                 new View.OnClickListener() {
             @Override
@@ -87,8 +81,6 @@ public class MainActivity extends AppCompatActivity {
                 ft.commit();
             }
         });
-
-
 
     }
     public void onConfigurationChanged(Configuration newConfig) {

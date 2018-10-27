@@ -1,6 +1,5 @@
 package com.example.asd.myapplication;
 
-
 class MyItem {
     int image;
     String name;

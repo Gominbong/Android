@@ -20,7 +20,6 @@ import static com.example.asd.myapplication.FragmentActivity1.hamburgerPrice;
 import static com.example.asd.myapplication.MainActivity.data;
 
 public class FragmentActivity3 extends Fragment{
-    static int humburgertotal;
     static int temp,temp1;
 
     static int number=1;

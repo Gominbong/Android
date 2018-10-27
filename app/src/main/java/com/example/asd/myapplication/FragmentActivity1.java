@@ -1,7 +1,5 @@
 package com.example.asd.myapplication;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -10,14 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.Toast;
-
-import java.util.ArrayList;
 
 import static com.example.asd.myapplication.MainActivity.data;
-
 
 public class FragmentActivity1 extends Fragment {
     static String hamburgerName;
@@ -29,7 +22,6 @@ public class FragmentActivity1 extends Fragment {
     @Nullable
     @Override
         public View onCreateView(LayoutInflater inflater, @Nullable final ViewGroup container, Bundle savedInstanceState) {
-
 
         View v = inflater.inflate(R.layout.activity_fragment1,container,false);
         ListView listview = (ListView)v.findViewById(R.id.listview355);
@@ -47,14 +39,10 @@ public class FragmentActivity1 extends Fragment {
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
                 ft.replace(R.id.framelayout,new FragmentActivity3());
                 ft.commit();
-
-
             }
         });
 
-
         return v;
-
 
         }
 }
