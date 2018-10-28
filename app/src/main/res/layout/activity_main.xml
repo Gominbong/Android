@@ -56,4 +56,18 @@
             android:textSize="50sp" />
     </FrameLayout>
 
+    <LinearLayout
+        app:layout_constraintTop_toBottomOf="@+id/framelayout"
+        app:layout_constraintWidth_percent=".9999"
+        app:layout_constraintHeight_percent=".0888"
+        android:layout_width="0dp"
+        android:layout_height="0dp">
+
+        <TextView
+            android:text="qwiepoqwiep"
+            android:id="@+id/textview45"
+            android:autoSizeTextType="uniform"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>

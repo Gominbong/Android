@@ -55,6 +55,8 @@ public class FragmentActivity3 extends Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+        TextView textView = (TextView)getActivity().findViewById(R.id.textview45);
+        textView.setText("프래그먼트3333333");
 
         View v = inflater.inflate(R.layout.activity_fragment3,container,false);
         ImageView imageView = (ImageView)v.findViewById(R.id.imageview);
@@ -73,17 +75,19 @@ public class FragmentActivity3 extends Fragment{
             @Override
             public void onClick(View v) {
 
-                data1.add(new MyItem(mImage, mName,mPrice,mtext+"  x"+number));
+                data1.add(new MyItem(mImage, mName, mPrice, mtext + "  x" + number));
 
-                temp=hamburgerPrice*number;
-                temp1=temp1+temp;
+                temp = hamburgerPrice * number;
+                temp1 = temp1 + temp;
 
-                number=1;
+                number = 1;
 
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace(R.id.framelayout,FragmentActivity2.newInstance("kkkkkkkkkkk"));
+
+                ft.replace(R.id.framelayout, FragmentActivity2.newInstance("프래그먼트22222222"));
                 ft.commit();
             }
+
         });
 
 
